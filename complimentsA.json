@@ -1,69 +1,14 @@
 {
-    "anytime" : [
-        "Jack is so awesome!",
-    ],
-    "morning" : [
-        "Good morning, sunshine!",
-        "Who needs coffee when you have your smile?",
-        "Go get 'em, Tiger!",
-        "Take on the day you beautiful land mermaid you!",
-        "I love the smell of napalm in the morning",
-        "You are early today"
-    ],
-    "afternoon" : [
-        "Hitting your stride!",
-        "You are making a difference!",
-        "You're more fun than bubble wrap!"
-    ],
-    "evening" : [
-        "You made someone smile today, I know it",
-        "You are making a difference",
-        "The day was better for your efforts",
-        "See you tomorrow!",
-        "Sleep tight"
-    ],
-    "snow": [
-        "Snowball battle!"
-    ],
-    "day_sunny" : [
-        "Today is a sunny day",
-        "It's a beautiful day",
-        "The sun is shining today!",
-        "It's such a beautiful day",
-        "It's gorgeous outside, go play!"
-        ],
-    "day_cloudy" : [
-        "It's cloudy out there, but no meatballs",
-        "It may be cloudy, but it's still nice out!",
-        "The sun is hiding right now"
-        ],
-    "cloudy" : [
-        ],
-    "cloudy_windy" : [
-    ],
-    "showers" : [
-        ],
-    "rain" : [
-        "Take your umbrella with you",
-        "It's wet out there, drive safe!",
-        "It's rainy outside, but you brighten my day"
-        ],
-    "thunderstorm" : [
-        ],
-    "fog" : [
-    ],
-    "night_clear": [
-        "Weather forecast for tonight: dark"
-    ],
-    "night_cloudy" : [
-    ],
-    "night_showers" : [
-    ],
-    "night_rain" : [
-    ],
-    "night_thunderstorm" : [
-        "It's a stormy night, don't be scared"
-    ],
-    "night_alt_cloudy_windy" : [
-    ]    
+  "anytime": [
+    "Jack is so awesome!"
+  ],
+  "morning": [
+  ],
+  "afternoon": [
+  ],
+  "evening": [
+  ],
+  "....-01-01": [
+    "Happy new year!"
+  ]
 }
