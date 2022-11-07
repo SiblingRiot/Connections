@@ -1,5 +1,17 @@
 {
-    "anytime" : [
-        "Jack is so beautiful",
-    ],
+  "anytime": [
+    "SR is so awesome!"
+  ],
+  "morning": [
+    "SR is so cool!"
+  ],
+  "afternoon": [
+    "SR is so sweet!"
+  ],
+  "evening": [
+    "SR is so weird!"
+  ],
+  "....-01-01": [
+    "Happy new year!"
+  ]
 }
