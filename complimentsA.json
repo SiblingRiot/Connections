@@ -2,5 +2,16 @@
   "anytime": [
     "Jack is so awesome!"
   ],
- 
+  "morning": [
+    "Jack is so cool!"
+  ],
+  "afternoon": [
+    "Jack is so sweet!"
+  ],
+  "evening": [
+    "Jack is so weird!"
+  ],
+  "....-01-01": [
+    "Happy new year!"
+  ]
 }
