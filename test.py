@@ -7,14 +7,22 @@ string = str(input())
 # Output message as a string
 print(string)
 
-# open local JSON file & insert string as an "anytime", "morning", "afternoon", and "evening" compliment at the beginning of the JSON file (r+ means read and write)
+# Open local JSON file (r+ means read and write)
 with open('complimentsA.json', 'r+') as f:
     data = json.load(f)
+
+# Insert output message into each respective category   
     data['anytime'] = string
     data['morning'] = string
     data['afternoon'] = string
     data['evening'] = string
+   
+# Reset file position to beginning   
     f.seek(0)
+
+# Insert data in file    
     json.dump(data, f, indent=2)
+   
+# Remove remaining part   
     f.truncate()
 
