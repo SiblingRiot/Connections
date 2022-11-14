@@ -7,12 +7,12 @@ compliments=[]
 string = str(input())
 
 # Clean up the string
-string = string.rstrip()
+newstring = string.rstrip()
 
 # Output message as a string
-print(string)
+print(newstring)
 
-compliments.append(string)
+compliments.append(newstring)
 
 # Open local JSON file (r+ means read and write)
 with open('complimentsA.json', 'r+') as f:
