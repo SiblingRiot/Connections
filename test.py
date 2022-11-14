@@ -1,14 +1,13 @@
-import sys
+import json
 
-# open local JSON file
-sys.stdout=open("complimentsA.json","w")
-
-# input
 string = str(input())
-  
-# output
+
 print(string)
 
-# save output to file
-sys.stdout.close()
-
+# open local JSON file
+with open('complimentsA.json', 'r+') as f:
+    data = json.load(f)
+    data['anytime'] = string
+    f.seek(0)
+    json.dump(data, f, indent=2)
+    f.truncate()
