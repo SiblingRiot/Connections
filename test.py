@@ -1,7 +1,9 @@
 import json
 
+# Input message
 string = str(input())
 
+# Output message as a string
 print(string)
 
 # open local JSON file
@@ -11,3 +13,4 @@ with open('complimentsA.json', 'r+') as f:
     f.seek(0)
     json.dump(data, f, indent=2)
     f.truncate()
+
