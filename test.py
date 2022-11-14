@@ -20,7 +20,7 @@ with open('complimentsA.json', 'r+') as f:
 # Reset file position to beginning   
     f.seek(0)
 
-# Insert data in file    
+# Insert data in file by converting python object to json object  
     json.dump(data, f, indent=2)
    
 # Remove remaining part   
