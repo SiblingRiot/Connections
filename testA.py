@@ -29,3 +29,21 @@ with open('complimentsA.json', 'r+') as f:
    
 # Remove remaining part   
     f.truncate()
+    
+# Impporting git
+import git
+
+# Git Pull
+repo = git.Repo('Connections')
+origin = repo.remote(name='main')
+origin.pull()
+
+# Git Add
+repo.git.add('complimentsA.json’)  
+
+#Git Commit
+repo.git.commit('-m', 'compliment', author='tcstamp2001@gmail.com')
+             
+# Git Push
+origin = repo.remote(name='main')
+origin.push()
