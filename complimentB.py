@@ -6,6 +6,9 @@ compliments=[]
 # Input message in terminal
 string = str(input())
 
+# Check and push to json file
+
+
 # Clean up the string
 newstring = string.rstrip()
 
