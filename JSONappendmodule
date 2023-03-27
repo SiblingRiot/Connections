@@ -1,0 +1,46 @@
+Module.register("MMM-JSON-Appender", {
+
+  // Define the defaults
+  defaults: {
+    jsonFilePath: "/home/pi/MagicMirror/Connections/complimentsB.json",
+    appendMessage: "Hello, World!",
+  },
+
+  // Define the start function
+  start: function() {
+    this.sendSocketNotification("CONFIG", this.config);
+  },
+
+  // Define the socket notification function
+  socketNotificationReceived: function(notification, payload) {
+    if (notification === "APPEND_JSON") {
+      console.log("Appending message to JSON file...");
+      this.appendJSON(payload.message);
+    }
+  },
+
+  // Define the appendJSON function
+  appendJSON: function(message) {
+    var fs = require("fs");
+    var json = JSON.parse(fs.readFileSync(this.config.jsonFilePath, "utf8"));
+    json.push(message);
+    fs.writeFileSync(this.config.jsonFilePath, JSON.stringify(json));
+    console.log("Message appended to JSON file:", message);
+  },
+
+  // Define the getDom function
+  getDom: function() {
+    var wrapper = document.createElement("div");
+    wrapper.innerHTML = "Type a message to append to the JSON file:";
+    var input = document.createElement("input");
+    input.type = "text";
+    input.addEventListener("keyup", (event) => {
+      if (event.key === "Enter") {
+        this.sendSocketNotification("APPEND_JSON", { message: event.target.value });
+        event.target.value = "";
+      }
+    });
+    wrapper.appendChild(input);
+    return wrapper;
+  }
+});
