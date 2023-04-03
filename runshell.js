@@ -1,23 +1,31 @@
+const NodeHelper = require('node_helper');
 const { spawn } = require('child_process');
 
-function runScript() {
-  const script = spawn('sh', ['./upload.sh']);
+module.exports = NodeHelper.create({
+  start: function() {
+    console.log(`Starting ${this.name} module`);
 
-  script.stdout.on('data', (data) => {
-    console.log(`stdout: ${data}`);
-  });
+    // replace '/path/to/shell/file.sh' with the actual path to your shell file
+    const shellProcess = spawn('sh', ['/path/to/shell/file.sh']);
 
-  script.stderr.on('data', (data) => {
-    console.error(`stderr: ${data}`);
-  });
+    // when the shell process outputs data, broadcast it to the client
+    shellProcess.stdout.on('data', (data) => {
+      this.sendSocketNotification('SHELL_OUTPUT', data.toString());
+    });
 
-  script.on('close', (code) => {
-    console.log(`child process exited with code ${code}`);
-    // Restart the script
-    runScript();
-  });
-}
+    // when the shell process encounters an error, log it to the console
+    shellProcess.on('error', (error) => {
+      console.error(`Shell error: ${error}`);
+    });
 
-// Start the script
-runScript();
+    // when the shell process exits, log the exit code to the console
+    shellProcess.on('exit', (code) => {
+      console.log(`Shell process exited with code ${code}`);
+    });
+  },
 
+  // handle incoming socket notifications from the client
+  socketNotificationReceived: function(notification, payload) {
+    // handle any custom logic here
+  }
+});
