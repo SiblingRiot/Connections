@@ -1,0 +1,17 @@
+Module.register('mymodule', {
+  defaults: {
+    // add any default configuration options here
+  },
+
+  start: function() {
+    console.log(`Starting ${this.name} module`);
+    this.sendSocketNotification('START_SHELL');
+  },
+
+  // handle incoming socket notifications from the node helper
+  socketNotificationReceived: function(notification, payload) {
+    if (notification === 'SHELL_OUTPUT') {
+      // handle the shell output here
+    }
+  }
+});
