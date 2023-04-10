@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd /home/pi/MagicMirror/Connections
 
 git add .
 
